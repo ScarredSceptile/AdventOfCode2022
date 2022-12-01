@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Advent_Of_Code_2022.Days;
+using System;
 
 namespace Advent_Of_Code_2022
 {
@@ -6,7 +7,8 @@ namespace Advent_Of_Code_2022
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Day day = new Day1();
+            day.Star2();
         }
     }
 }

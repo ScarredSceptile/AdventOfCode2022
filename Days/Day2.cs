@@ -46,7 +46,6 @@ namespace Advent_Of_Code_2022.Days
                     score += 6;
             }
             Console.WriteLine(score);
-
         }
 
         public void Star2()

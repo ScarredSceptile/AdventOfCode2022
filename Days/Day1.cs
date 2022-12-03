@@ -15,8 +15,8 @@ namespace Advent_Of_Code_2022.Days
         public void Star2()
         {
             var calories = Input.GetSingle("Day1").Split("\r\n\r\n");
-            var elfCal = calories.Select(m => m.Split("\n").Sum(s => Convert.ToInt32(s))).OrderByDescending(s => s).ToArray();
-            Console.WriteLine(elfCal[0] + elfCal[1] + elfCal[2]);
+            var elfCal = calories.Select(m => m.Split("\n").Sum(s => Convert.ToInt32(s))).OrderByDescending(s => s).Take(3).Sum();
+            Console.WriteLine(elfCal);
         }
     }
 }

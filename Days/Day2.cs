@@ -54,7 +54,6 @@ namespace Advent_Of_Code_2022.Days
             int score = 0;
             foreach (var item in input)
             {
-                //Lose
                 if (item[1] == "X")
                     score += shapePoint[winCon[item[0]]];
                 else if (item[1] == "Y")

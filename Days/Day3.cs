@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Advent_Of_Code_2022.Days
 {
@@ -28,7 +26,7 @@ namespace Advent_Of_Code_2022.Days
             int total = 0;
             for (int i = 0; i < input.Length; i += 3)
             {
-                var common = input[i].Where(c => input[i+1].Any(r => r == c)).ToArray();
+                var common = input[i].Where(c => input[i + 1].Any(r => r == c)).ToArray();
                 var shared = common.Where(c => input[i + 2].Any(r => r == c)).FirstOrDefault();
                 var add = char.IsLower(shared) ? 0 : 26;
                 total += char.ToUpper(shared) + add - 64;

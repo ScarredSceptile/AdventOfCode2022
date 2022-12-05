@@ -6,7 +6,7 @@ namespace Advent_Of_Code_2022
     {
         static void Main()
         {
-            Day day = new Day4();
+            Day day = new Day5();
             day.Star2();
         }
     }

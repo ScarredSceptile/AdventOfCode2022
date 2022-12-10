@@ -13,13 +13,13 @@ namespace Advent_Of_Code_2022.Days
             foreach (var item in input)
             {
                 if (item == "noop")
-                    signal += CheckCycle(++cycle, X);
+                    signal += (++cycle - 20) % 40 == 0 ? cycle * X : 0;
 
                 else
                 {
                     var arg = int.Parse(item.Split(" ")[1]);
-                    signal += CheckCycle(++cycle, X);
-                    signal += CheckCycle(++cycle, X);
+                    signal += (++cycle - 20) % 40 == 0 ? cycle * X : 0;
+                    signal += (++cycle - 20) % 40 == 0 ? cycle * X : 0;
                     X += arg;
                 }
             }
@@ -36,13 +36,13 @@ namespace Advent_Of_Code_2022.Days
             {
                 if (item == "noop")
                 {
-                    screen[cycle / 40, cycle % 40] = DrawSprite(cycle++, X) ? '#' : '.';
+                    screen[cycle / 40, cycle % 40] = Math.Abs((cycle++ % 40) - X) <= 1 ? '#' : '.';
                 }
                 else
                 {
                     var arg = int.Parse(item.Split(" ")[1]);
-                    screen[cycle / 40, cycle % 40] = DrawSprite(cycle++, X) ? '#' : '.';
-                    screen[cycle / 40, cycle % 40] = DrawSprite(cycle++, X) ? '#' : '.';
+                    screen[cycle / 40, cycle % 40] = Math.Abs((cycle++ % 40) - X) <= 1 ? '#' : '.';
+                    screen[cycle / 40, cycle % 40] = Math.Abs((cycle++ % 40) - X) <= 1 ? '#' : '.';
                     X += arg;
                 }
             }
@@ -52,20 +52,6 @@ namespace Advent_Of_Code_2022.Days
                     Console.Write(screen[i, j]);
                 Console.Write("\n");
             }
-        }
-
-        private int CheckCycle(int cycle, int X)
-        {
-            if ((cycle - 20) % 40 == 0)
-                return cycle * X;
-            return 0;
-        }
-
-        private bool DrawSprite(int cycle, int X)
-        {
-            if (Math.Abs((cycle % 40) - X) <= 1)
-                return true;
-            return false;
         }
     }
 }

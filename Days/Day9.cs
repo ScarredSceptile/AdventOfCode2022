@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
 
 namespace Advent_Of_Code_2022.Days
 {
@@ -18,7 +17,7 @@ namespace Advent_Of_Code_2022.Days
             {
                 var task = item.Split(" ");
                 var dir = GetDirection(task[0]);
-                var amount =  int.Parse(task[1]);
+                var amount = int.Parse(task[1]);
 
                 for (var i = 0; i < amount; i++)
                 {
@@ -47,7 +46,7 @@ namespace Advent_Of_Code_2022.Days
             for (int i = 0; i < 7; i++)
                 knots.Add(new Knot(knots[i]));
 
-            foreach(var item in input)
+            foreach (var item in input)
             {
                 var task = item.Split(" ");
                 var dir = GetDirection(task[0]);
@@ -102,14 +101,8 @@ namespace Advent_Of_Code_2022.Days
         {
             var vertDiff = thisKnot.X - aheadKnot.X;
             var horizDiff = thisKnot.Y - aheadKnot.Y;
-            if (Math.Abs(vertDiff) > 1)
-            {
+            if (Math.Abs(vertDiff) > 1 || Math.Abs(horizDiff) > 1)
                 return thisKnot + new Vector2(-1 * Math.Sign(vertDiff), -1 * Math.Sign(horizDiff));
-            }
-            else if (Math.Abs(horizDiff) > 1)
-            {
-                return thisKnot + new Vector2(-1 * Math.Sign(vertDiff), -1 * Math.Sign(horizDiff));
-            }
             return thisKnot;
         }
     }

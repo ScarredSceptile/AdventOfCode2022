@@ -35,9 +35,8 @@ namespace Advent_Of_Code_2022.Days
             foreach (var item in input)
             {
                 if (item == "noop")
-                {
                     screen[cycle / 40, cycle % 40] = Math.Abs((cycle++ % 40) - X) <= 1 ? '#' : '.';
-                }
+
                 else
                 {
                     var arg = int.Parse(item.Split(" ")[1]);

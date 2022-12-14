@@ -16,10 +16,10 @@ namespace Advent_Of_Code_2022.Days
         public void Star2()
         {
             var root = GetSystem(Input.Get("Day7"));
-            var total = root.GetSize();
+            var (size, sum)= root.GetSize();
             long totalSpace = 70000000;
             long required = 30000000;
-            long available = totalSpace - total.size;
+            long available = totalSpace - size;
             long missing = required - available;
             var allSizes = root.GetAllSizes();
             Console.WriteLine(allSizes.Where(s => s >= missing).OrderBy(s => s).First());

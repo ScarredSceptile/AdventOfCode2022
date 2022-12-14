@@ -27,7 +27,7 @@ namespace Advent_Of_Code_2022.Days
                     if (Math.Abs(tail.CurPos.X - head.X) > 1 || Math.Abs(tail.CurPos.Y - head.Y) > 1)
                     {
                         tail.CurPos = prev;
-                        if (tail.Visited.Where(t => t.Equals(prev)).Count() == 0)
+                        if (!tail.Visited.Where(t => t.Equals(prev)).Any())
                             tail.Visited.Add(prev);
                     }
                 }

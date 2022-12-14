@@ -30,7 +30,7 @@ namespace Advent_Of_Code_2022.Days
             var rangeTwo = ranges[1].Split("-").Select(n => int.Parse(n)).ToArray();
             var r1 = Enumerable.Range(rangeOne[0], rangeOne[1] - rangeOne[0] + 1).ToList();
             var r2 = Enumerable.Range(rangeTwo[0], rangeTwo[1] - rangeTwo[0] + 1).ToList();
-            return r1.Where(c => r2.Contains(c)).Count() >= 1;
+            return r1.Where(c => r2.Contains(c)).Any();
         }
     }
 }

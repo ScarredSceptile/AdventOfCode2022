@@ -25,7 +25,7 @@ namespace Advent_Of_Code_2022.Days
             for (int i = 0; i < input.Length; i++)
                 for (int j = 0; j < input[i].Length; j++)
                     forest[i, j] = new Tree(input[i][j] - '0');
-            List<int[]> sceneryscores = new List<int[]>();
+            List<int[]> sceneryscores = new();
 
             for (int i = 0; i < forest.GetLength(0); i++)
             {

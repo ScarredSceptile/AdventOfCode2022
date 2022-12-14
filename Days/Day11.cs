@@ -38,9 +38,9 @@ namespace Advent_Of_Code_2022.Days
                         else
                             item %= mod;
                         if (item % monkey.divisible == 0)
-                            monkeys.Where(m => m.id == monkey.throwTrue).FirstOrDefault().items.Add(item);
+                            monkeys.FirstOrDefault(m => m.id == monkey.throwTrue).items.Add(item);
                         else
-                            monkeys.Where(m => m.id == monkey.throwFalse).FirstOrDefault().items.Add(item);
+                            monkeys.FirstOrDefault(m => m.id == monkey.throwFalse).items.Add(item);
                         monkey.inspected++;
                     }
                 }

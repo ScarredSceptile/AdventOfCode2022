@@ -21,13 +21,13 @@ namespace Advent_Of_Code_2022.Days
                 var to = int.Parse(items[5]) - 1;
                 for (int i = 0; i < amount; i++)
                 {
-                    var item = stack[from][stack[from].Count() - 1];
-                    stack[from].RemoveAt(stack[from].Count() - 1);
+                    var item = stack[from][^1];
+                    stack[from].RemoveAt(stack[from].Count - 1);
                     stack[to].Add(item);
                 }
             }
             foreach (var item in stack)
-                Console.Write(item[item.Count() - 1]);
+                Console.Write(item[^1]);
         }
 
         public void Star2()
@@ -44,12 +44,12 @@ namespace Advent_Of_Code_2022.Days
                 var from = int.Parse(items[3]) - 1;
                 var to = int.Parse(items[5]) - 1;
 
-                var stackItems = stack[from].GetRange(stack[from].Count() - amount, amount);
-                stack[from].RemoveRange(stack[from].Count() - amount, amount);
+                var stackItems = stack[from].GetRange(stack[from].Count - amount, amount);
+                stack[from].RemoveRange(stack[from].Count - amount, amount);
                 stack[to].AddRange(stackItems);
             }
             foreach (var item in stack)
-                Console.Write(item[item.Count() - 1]);
+                Console.Write(item[^1]);
         }
 
         private List<char>[] ParseStack(string[] data)
